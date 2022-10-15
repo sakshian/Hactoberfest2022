@@ -1,28 +1,21 @@
 #include<stdio.h>
-#include<conio.h>
-void main()
-{
-int n,a[100],ele,t=0;
-printf("enter size of array:");
-scanf("%d",&n);
-printf("enter elements of array:");
-for(int i=0;i<n;i++)
-{
-scanf("%d",&a[i]);
-}
-printf("enter the element you want to search:");
-scanf("%d",&ele);
-for(int i=0;i<n;i++)
-{
-if(ele==a[i])
-{
-t=i;
-break;
-}
-}
-if(t!=0)
- printf("Index of searched element is %d",t);
-else
- printf("element is not found");
+ 
+int linearSearch(int arr[], int size, int element){
+    for (int i = 0; i < size; i++)
+    {
+        if(arr[i]==element){
+            return i;
+        }
+    }
+    return -1;
 }
  
+ 
+int main(){
+    // Unsorted array for linear search
+    // int arr[] = {1,3,5,56,4,3,23,5,4,54634,56,34};
+    int element = 444;
+    int searchIndex = linearSearch (arr,element);
+    printf("The element %d was found at index %d \n", element, searchIndex);
+    return 0;
+}
